@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <SCRIPT SRC="{% static "jqueryUI/jquery.js" %}"></SCRIPT>
+    <script src="{% static "js/upload.js" %}"></script>
+    <title>upload</title>
+</head>
+<body>
+<div>
+        <input type="file" name="file" id="file_upload">
+        <input type="button" value="上传" onclick="FileUpload()">
+</div>
+</body>
+</html>
