@@ -75,7 +75,7 @@ $(document).ready(function () {
                 else
                     $(show_text_name).hide();
             }
-            //$("#img_box").css("background-image","url('../img/"+f_num+".png')");
+            $("#img_box").css("background-image","url('../static/img/"+f_num+".jpg')");
         },
     });
 
