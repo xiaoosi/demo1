@@ -1,6 +1,6 @@
 //全局变量
-let file_path = ""; //图片文件夹路径
-let img_num = 100;    //切割图片的数量
+let file_path = "9lzdba6pgvtuk17ahdzp5b9jjyfpe6lu"; //图片文件夹路径
+let img_num = 31;    //切割图片的数量
 let text_list = new Array(0);   //text_list由多个text_item组成
 
 //TextItem类定义
@@ -62,9 +62,9 @@ $(document).ready(function () {
     // language=JQuery-CSS
     $("#img_slider").slider({
         orientation: "horizontal", //水平方向
-        min: 1,
+        min: 0,
         max: img_num,
-        value: 1,   //初始值
+        value: 0,   //初始值
         animate: true,
         slide: function (event, ui) {
             let f_num = ui.value;
@@ -75,7 +75,7 @@ $(document).ready(function () {
                 else
                     $(show_text_name).hide();
             }
-            $("#img_box").css("background-image","url('../static/img/"+f_num+".jpg')");
+            $("#img_box").css("background-image","url('../static/image_file/"+file_path+"/patch/"+f_num+".jpg')");
         },
     });
 
@@ -83,7 +83,7 @@ $(document).ready(function () {
     $("#text_item_slider").slider({
         orientation: "horizontal",
         range: true,
-        min: 1,
+        min: 0,
         max: img_num,
         values: [1, 10],
         animate: true,
@@ -93,8 +93,8 @@ $(document).ready(function () {
     });
 
     $("#bu_creat").click(function () {
-            $.post("http://127.0.0.1:8000/my_demo_app/", JSON.stringify(text_list), function (data) {
-            alert("hahahah");
+            $.post("http://192.168.3.1:8000/my_demo_app/", JSON.stringify(text_list), function (data) {
+            $("#img_box").css("background-image","url('../static/image_file/" + file_path + "/out.gif')");
         });
     });
 
@@ -103,14 +103,14 @@ $(document).ready(function () {
 
 
     let a = new TextItem(0);
-    a.st_time = 1;
-    a.en_time = 30;
+    a.st_time = 0;
+    a.en_time = 10;
     a.text = "我王敬泽";
     a.creat();
     text_list.push(a);
     let b = new TextItem(1);
-    b.st_time = 31;
-    b.en_time = 70;
+    b.st_time = 5;
+    b.en_time = 20;
     b.text = "就是死";
     b.creat();
     text_list.push(b);

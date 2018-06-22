@@ -6,7 +6,7 @@ function FileUpload() {
     //alert('你没有选择任何文件');
     //return false
     $.ajax({
-        url: 'http://127.0.0.1:8000/my_demo_app/upload_ajax',
+        url: 'http://192.168.3.126:8000/my_demo_app/upload_ajax',
         type: 'POST',
         data: form_data,
         processData: false,  // tell jquery not to process the data
