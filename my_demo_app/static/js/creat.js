@@ -2,6 +2,7 @@
 let file_path = "9lzdba6pgvtuk17ahdzp5b9jjyfpe6lu"; //图片文件夹路径
 let img_num = 31;    //切割图片的数量
 let text_list = new Array(0);   //text_list由多个text_item组成
+let id = 0;
 
 //TextItem类定义
 function TextItem(id) {
@@ -93,9 +94,15 @@ $(document).ready(function () {
     });
 
     $("#bu_creat").click(function () {
-            $.post("http://192.168.3.1:8000/my_demo_app/", JSON.stringify(text_list), function (data) {
-            $("#img_box").css("background-image","url('../static/image_file/" + file_path + "/out.gif')");
-        });
+        // $.post("http://192.168.3.1:8000/my_demo_app/", JSON.stringify(text_list), function (data) {
+        //     $("#img_box").css("background-image","url('../static/image_file/" + file_path + "/out.gif')");
+        // });
+        alert($("#text_item_slider").slider("option", values));
+    });
+    $("#bu_add").click(function () {
+       alert("hello");
+       let values = $("#text_item_slider").slider("option", "values", [12, 100]);
+        alert(values);
     });
 
 
