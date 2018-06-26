@@ -92,7 +92,7 @@ $(document).ready(function () {
         max: img_num*ex_num,
         value: 0,   //初始值
         animate: true,
-        slide: function (event, uie) {
+        slide: function (event, ui) {
             let f_num = parseInt(ui.value/ex_num);
             for(let i=0; i<text_list.length; i++){
                 let show_text_name = "#show_text_id_"+text_list[i].id;
