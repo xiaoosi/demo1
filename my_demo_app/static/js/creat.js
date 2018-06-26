@@ -119,7 +119,7 @@ $(document).ready(function () {
     });
 
     $("#bu_creat").click(function () {
-        $.post("http://127.0.0.1:8000/my_demo_app/", JSON.stringify(text_list), function (data) {
+        $.post("/my_demo_app/", JSON.stringify(text_list), function (data) {
             $("#img_box").css("background-image","url('../static/image_file/" + file_path
                 + "/out.gif?t="+Math.random()+")");
         });
@@ -163,10 +163,6 @@ $(document).ready(function () {
         });
     });
 
-
-
-
-
     // let a = new TextItem(0);
     // a.st_time = 0;
     // a.en_time = 10;
@@ -180,4 +176,7 @@ $(document).ready(function () {
     // b.creat();
     // text_list.push(b);
     creat_text_item();
+    for(let i = 10; i<img_num; i++)
+        $.get("../static/image_file/"+file_path+"/patch/"+i+".jpg");
+
 });

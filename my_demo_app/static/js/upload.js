@@ -29,14 +29,14 @@ function FileUpload() {
     //alert('你没有选择任何文件');
     //return false
     $.ajax({
-        url: 'http://127.0.0.1:8000/my_demo_app/upload_ajax',
+        url: '/my_demo_app/upload_ajax',
         type: 'POST',
         data: form_data,
         processData: false,  // tell jquery not to process the data
         contentType: false,  // tell jquery not to set contentType
         success: function (data) {
             alert(data.img_num);
-            Post("http://127.0.0.1:8000/my_demo_app/creat", data);
+            Post("/my_demo_app/creat", data);
             // $.StandardPost("http://127.0.0.1:8000/my_demo_app/creat", data)
         }
     });
