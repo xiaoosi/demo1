@@ -1,6 +1,5 @@
 #img_box{
     position: relative;
-    background-image: url("../image_file/0.jpg");
     background-repeat:no-repeat;
     background-size:100% 100%;
     width: 500px;

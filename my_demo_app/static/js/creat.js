@@ -3,6 +3,7 @@
 // let img_num = 31;    //切割图片的数量
 let text_list = new Array(0);   //text_list由多个text_item组成
 let id = 0;
+let ex_num = 10;
 
 //TextItem类定义
 function TextItem(id) {
@@ -80,17 +81,19 @@ function creat_text_item() {
 
 //相当于主函数
 $(document).ready(function () {
+    //初始化
+    $("#img_box").css("background-image","url('../static/image_file/"+file_path+"/patch/0.jpg')");
 
     //初始化img_slider
     // language=JQuery-CSS
     $("#img_slider").slider({
         orientation: "horizontal", //水平方向
         min: 0,
-        max: img_num,
+        max: img_num*ex_num,
         value: 0,   //初始值
         animate: true,
-        slide: function (event, ui) {
-            let f_num = ui.value;
+        slide: function (event, uie) {
+            let f_num = parseInt(ui.value/ex_num);
             for(let i=0; i<text_list.length; i++){
                 let show_text_name = "#show_text_id_"+text_list[i].id;
                 if(f_num >= text_list[i].st_time && f_num <= text_list[i].en_time)
@@ -107,7 +110,7 @@ $(document).ready(function () {
         orientation: "horizontal",
         range: true,
         min: 0,
-        max: img_num,
+        max: img_num*ex_num,
         values: [1, 10],
         animate: true,
         slide: function (event, ui) {
@@ -127,10 +130,10 @@ $(document).ready(function () {
         let text_item = new TextItem(id++);
         text_item.text = $("#in_text").val();
         let time = $("#text_item_slider").slider("option", "values");
-        text_item.st_time = time[0];
-        text_item.en_time = time[1];
-        text_item.top = 250;
-        text_item.left = 100;
+        text_item.st_time = parseInt(time[0]/ex_num);
+        text_item.en_time = parseInt(time[1]/ex_num);
+        text_item.top = 0;
+        text_item.left = 0;
         text_list.push(text_item);
 
         text_item.creat();
