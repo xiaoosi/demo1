@@ -10,8 +10,6 @@ import creat_gif
 
 def index(request):
     if request.method == 'POST':
-        if not request.session.get('has_session'):
-            request.session['has_session'] = True
         print(request.session.session_key)
         test_list = json.loads(request.body)
         print(test_list)
@@ -26,7 +24,9 @@ def index(request):
 
 
 def creat(request):
-    return render(request, 'creat/creat.html')
+    print request.POST
+    return render(request, 'creat/creat.html', {"file_path": request.POST['file_path'],
+                                                "img_num": int(request.POST['img_num'])})
 
 
 def upload(request):

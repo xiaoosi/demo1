@@ -1,12 +1,16 @@
 #img_box{
+    position: relative;
     background-image: url("../image_file/0.jpg");
     background-repeat:no-repeat;
     background-size:100% 100%;
-    width: 400px;
+    width: 500px;
     height: 300px;
 }
 .show_text{
+    position: absolute;
     width: fit-content;
+    font-family: "Noto Sans CJK JP Bold", serif;
     margin: 0px;
+    font-size: 25px;
     color: #dddddd;
 }
