@@ -1,0 +1,12 @@
+#main{
+    width: 200px;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 500px;
+}
+div img{
+    margin: auto;
+}
+div input{
+    margin-right: 20px;
+}

@@ -24,9 +24,12 @@ def index(request):
 
 
 def creat(request):
-    print request.POST
-    return render(request, 'creat/creat.html', {"file_path": request.POST['file_path'],
-                                                "img_num": int(request.POST['img_num'])})
+    content = {"file_path": request.POST['file_path'].encode('utf-8'),
+               "img_num": int(request.POST['img_num']),
+               "text_list_json": '[{"id":0,"st_time":0,"en_time":10,"text":"我王敬泽","top":0,"left":0},{"id":1,"st_time":5,"en_time":20,"text":"就是死","top":0,"left":0}]',
+               }
+    print content
+    return render(request, 'creat/creat.html', content)
 
 
 def upload(request):
@@ -57,6 +60,7 @@ def upload_ajax(request):
                 num = creat_gif.division(os.path.join("my_demo_app/static/image_file", sessionid))
                 return JsonResponse({"file_path": sessionid,
                                      "img_num": num,
+                                     "text_list_json": '',
                                      "massage": "success"})
             except Exception, e:
                 return JsonResponse({"massage": "false"})

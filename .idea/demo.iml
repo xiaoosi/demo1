@@ -18,6 +18,9 @@
     </content>
     <orderEntry type="jdk" jdkName="Python 2.7 (1)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="amazeui" level="application" />
+    <orderEntry type="library" name="amazeui.ie8polyfill" level="application" />
+    <orderEntry type="library" name="amazeui.widgets.helper" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />

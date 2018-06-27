@@ -1,9 +1,23 @@
+body{
+    background-color: #e3e3e3;
+}
+h1{
+    color: #eeeeee;
+}
+#position{
+    margin: auto;
+    padding-top: 30px;
+    width: 800px;
+    border-radius:25px;
+    padding-bottom: 100px;
+}
 #img_box{
-    position: relative;
+    margin: 20px auto;
     background-repeat:no-repeat;
     background-size:100% 100%;
     width: 500px;
     height: 300px;
+    position: relative;
 }
 .show_text{
     position: absolute;
@@ -12,4 +26,65 @@
     margin: 0px;
     font-size: 25px;
     color: #dddddd;
+}
+#img_slider{
+    width: 600px;
+    margin: 30px auto;
+}
+.am-divider-default{
+    width: 550px;
+    margin: auto;
+    border-top: 1px solid #a2a2a2;
+}
+#text_item_slider{
+    margin: auto;
+    width: 600px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.am-input-group-label{
+    padding: 0px;
+}
+#change_box{
+    width: 600px;
+    margin: auto;
+}
+.am-input-group-label{
+    margin-left: 10px;
+}
+#bu_add{
+    margin-left: -2px;
+}
+#bu_alter{
+    margin-right: -2px;
+}
+#table_box{
+    margin: auto;
+    width: 600px;
+    padding: 10px 0px;
+    border-radius:15px;
+    background-color: #ffffff;
+}
+#text_list{
+    width: 550px;
+    margin: auto;
+}
+th{
+    background-color: #c2c2c2!important;
+    text-align: center;
+}
+td{
+    line-height: 10px;
+    text-align: center;
+}
+#bu_creat{
+    float: right;
+    margin-top: 20px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+#fail_img{
+    width: 400px;
+    height: 250px;
+    margin-bottom: 30px;
 }

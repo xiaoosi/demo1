@@ -2,15 +2,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <SCRIPT SRC="{% static "jqueryUI/jquery.js" %}"></SCRIPT>
+    {% include 'include.html' %}
     <script src="{% static "js/upload.js" %}"></script>
+    <link rel="stylesheet" href="{% static "css/creat.css" %}">
+    <link rel="stylesheet" href="{% static "css/upload.css" %}">
     <title>upload</title>
 </head>
 <body>
-<div>
-        <input type="file" name="file" id="file_upload">
-        <input type="button" value="上传" onclick="FileUpload()">
+{% include 'header.html' %}
+<div id="main">
+    <div>
+        <input type="file" style="display:none" id="file_upload">
+        <img src="../static/img/upload.png" onclick="img_click()">
+    </div>
+    <input type="button" value="点击图片选择文件" onclick="FileUpload()" id="bu_upload"
+    class="am-btn am-btn-primary am-radius">
+    <p id="show_massage"></p>
 </div>
+{% include 'footer.html' %}
 </body>
 </html>
