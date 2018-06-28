@@ -70,7 +70,7 @@ function creat_text_item() {
             + text_list[i].text +'</div></b>');
         id++;
         $("#show_text_id_" + text_list[i].id)
-            .css("top", 0).css("left", 0)
+            .css("top", text_list[i].top).css("left", text_list[i].left)
             .draggable({
             containment: "#img_box",
             iframeFix: true,
@@ -108,7 +108,6 @@ function correct_text_item(id) {
             etime = text_list[i].en_time;
             $("#text_item_slider").slider("values",[stime*ex_num,etime*ex_num]);
             $("#in_text").val(text_list[i].text);
-            alert("#text_item_id_"+id);
             break;
         }
     }
@@ -153,7 +152,7 @@ $(document).ready(function () {
     $("#img_slider").slider({
         orientation: "horizontal", //水平方向
         min: 0,
-        max: img_num*ex_num,
+        max: img_num*ex_num-1,
         value: 0,   //初始值
         animate: true,
         slide: function (event, ui) {
@@ -174,7 +173,7 @@ $(document).ready(function () {
         orientation: "horizontal",
         range: true,
         min: 0,
-        max: img_num*ex_num,
+        max: img_num*ex_num-1,
         values: [1, 10],
         animate: true,
         slide: function (event, ui) {
@@ -187,14 +186,14 @@ $(document).ready(function () {
             "制作中");
         $("#fail").html("<i class=\"am-icon-spinner am-icon-spin\"></i>\n" +
             "<p>制作中</p>");
-        $.post("/my_demo_app/", JSON.stringify(text_list), function (data) {
+        $.post("/my_demo_app/gif", JSON.stringify(text_list), function (data) {
             // $("#img_box").css("background-image","url('../static/image_file/" + file_path
             //     + "/out.gif?t="+Math.random()+")");
             $("#bu_creat").html("开始制作");
             $("#fail").html("<img id='fail_img' src='../static/image_file/"+file_path+"/out.gif?t="+Math.random()+"'>"+
                             "<br><button class='am-btn am-btn-primary am-radius'  onclick='download()'>下载图片</button>");
         });
-        //alert(JSON.stringify(text_list));
+        // alert(JSON.stringify(text_list));
     });
 
     $("#bu_add").click(function () {
@@ -271,20 +270,8 @@ $(document).ready(function () {
                 needui.updata();
             }
         });
-       //alert("修改成功！");
+       alert("修改成功！");
     });
-    // let a = new TextItem(0);
-    // a.st_time = 0;
-    // a.en_time = 10;
-    // a.text = "我王敬泽";
-    // a.creat();
-    // text_list.push(a);
-    // let b = new TextItem(1);
-    // b.st_time = 5;
-    // b.en_time = 20;
-    // b.text = "就是死";
-    // b.creat();
-    // text_list.push(b);
     trans(text_list_str);
     creat_text_item();
     for(let i = 10; i<img_num; i++)

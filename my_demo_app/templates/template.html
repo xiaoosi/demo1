@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Template</title>
+    {% include 'include.html' %}
+    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet" type="text/css" media="all" />
+    <script src="{% static "js/template.js" %}"></script>
+    <link href="{% static "css/template.css" %}" rel="stylesheet" type="text/css" media="all" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Crete+Round:400,400italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    {% include 'header.html' %}
+    <div class="container" id="tem">
+	    <div class="row clearfix">
+		    <div class="col-md-12 column">
+			    <div class="page-header">
+				    <h1>
+					    Template<small>模板</small>
+				    </h1>
+			    </div>
+			    <div class="row clearfix">
+                    {% for i in page_obj %}
+                    <div class="col-md-3 column" id="show">
+                        <a id="show_img_id_{{ i.id }}" class="show_img" onclick="show_img_onclick({{ i.id }})"><img src="{{ i.img.url }}" class="img-rounded"></a><br>
+                    {% if i.tag %}
+                        <span class="label label-default">{{ i.tag }}</span>
+                    {% endif %}
+                    </div>
+                    {% endfor %}
+			    </div>
+		    </div>
+	    </div>
+    </div>
+
+    <div class="container">
+	    <div class="row clearfix">
+		    <div class="col-md-12 column">
+			    <div class="row clearfix">
+				    <div class="col-md-4 column">
+				    </div>
+				    <div class="col-md-4 column">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                {% if  page_obj.previous_page_number > 0 %}
+                                <li>
+                                    <a href="?page={{ page_obj.previous_page_number}}" aria-label="Previous">
+                                    <span aria-hidden="true">«</span>
+                                    </a>
+                                </li>
+                                {% endif %}
+
+                                {% for page_num in page_list %}
+                                    {% if page_num == page_obj.number %}
+                                    <li class="active"><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+                                    {% else %}
+                                    <li><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+
+                                {% if page_obj.has_next %}
+                                    <li><a href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                                        <span aria-hidden="true">»</span></a>
+                                    </li>
+                                {% endif %}
+
+                            </ul>
+                        </nav>
+				    </div>
+				    <div class="col-md-4 column">
+				    </div>
+			    </div>
+            </div>
+	    </div>
+    </div>
+
+{% include 'footer.html' %}
+</body>
+</html>

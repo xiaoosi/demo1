@@ -8,7 +8,7 @@ DIVISION_SIZE = 0.2
 
 
 def create_text_clip(string, b_time=0, e_time=0):
-    text_clip = mpy.TextClip(string, font=r"Noto-Sans-CJK-JP-Bold",
+    text_clip = mpy.TextClip(string, font=r"Noto-Sans-CJK-SC-Bold",
                              fontsize=16, color="#fff")
     text_clip = text_clip.set_start(b_time).set_end(e_time)
     return text_clip

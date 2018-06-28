@@ -1,6 +1,4 @@
 from django.contrib import admin
-
+from my_demo_app.models import IMG
 # Register your models here.
-
-import models
-admin.site.register(models.GifModel)
+admin.site.register(IMG)

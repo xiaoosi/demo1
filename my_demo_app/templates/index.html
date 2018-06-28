@@ -1,0 +1,268 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); }
+    </script>
+    <link rel="stylesheet" href="{% static "css/chocolat.css" %}" type="text/css" media="screen" charset="utf-8">
+	<link href="{% static "css/bootstrap.css" %}" rel="stylesheet" type="text/css" media="all" />
+	<link href="{% static "css/style.css" %}" rel="stylesheet" type="text/css" media="all" />
+	<script src="{% static "js/jquery-1.11.1.min.js" %}"></script>
+	<script src="{% static "js/jquery.chocolat.js" %}"></script>
+	<link rel="stylesheet" type="text/css" href="{% static "css/component.css" %}" />
+	<script src="{% static "js/modernizr.custom.js" %}"></script>
+	<link rel="stylesheet" href="{% static "css/flexslider.css" %}" type="text/css" media="screen" />
+	<script defer src="{% static "js/jquery.flexslider.js" %}"></script>
+	<script type="text/javascript">
+		$(window).load(function(){
+			$('.flexslider').flexslider({
+				animation: "slide",
+				start: function(slider){
+				$('body').removeClass('loading');
+				}
+			 });
+		});
+	 </script>
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Crete+Round:400,400italic' rel='stylesheet' type='text/css'>
+</head>
+	
+<body>
+	<script src="{% static "js/jquery.progresstracker.js" %}"></script>
+			<script>
+				(function() {
+					$('body').progressTracker({
+						linking : true,
+						tooltip : "constant",
+						negativeTolerance : 0,
+						positiveTolerance : 0,
+						displayWhenActive : true,
+						disableBelow : 600
+					});
+				})();
+	</script>
+  	<div class="banner pt-section" data-name="home" id="ptsection-one">
+		<div class="container">
+			<div class="header">
+				<div class="logo">
+					<a href="/my_demo_app/index">Emoticon<span>Emoticon</span></a>
+				</div>
+				<div class="reserve">
+                    <a data-toggle="modal" data-target=".bs-example-modal-md" href="#" class="b-link-stripe b-animate-go  thickbox hvr-shutter-out-vertical">Team</a>
+				</div>
+				<div class="clearfix"></div>
+				<script src="{% static "js/bootstrap.min.js" %}"></script>
+				<a data-toggle="modal" data-target=".bs-example-modal-md" href="#"> </a>
+				<div class="modal fade bs-example-modal-md light-box" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-md">
+						<div class="modal-content light-box-info">
+							<div class="online_reservation">
+								<div class="b_room">
+									<div class="booking_room">
+										<div class="reservation">
+                                            <h2>Our Team</h2>
+                                            <h4>计科1502班</h4>
+                                            <p>组长：司洪超<br>组员：辛雨、白宇、肖雨林、吕剑宇</p>
+									 	</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+				<script src="{% static "js/responsiveslides.min.js" %}"></script>
+				 <script>
+				    // You can also use "$(window).load(function() {"
+				    $(function () {
+				      // Slideshow 4
+				      $("#slider3").responsiveSlides({
+				        auto: true,
+				        pager: true,
+				        nav: false,
+				        speed: 500,
+				        namespace: "callbacks",
+				        before: function () {
+				          $('.events').append("<li>before event fired.</li>");
+				        },
+				        after: function () {
+				          $('.events').append("<li>after event fired.</li>");
+				        }
+				      });
+				
+				    });
+				  </script>
+			<!--//End-slider-script -->
+			<div  id="top" class="callbacks_container wow fadeInUp" data-wow-delay="0.5s">
+				<ul class="rslides" id="slider3">
+					<li>
+						<div class="banner-info">
+							<h1>Discover the Joy of Living</h1>
+							<p>发现生活的乐趣</p>
+						</div>
+					</li>
+					<li>
+						<div class="banner-info">
+							<h1>Keep innovation consciousness, gazes at the world with their eyes</h1>
+							<p>始终保持创新意识，用自己的眼光注视世界</p>
+						</div>
+					</li>
+					<li>
+						<div class="banner-info">
+							<h1>Just do it!Welcome to emoticon!</h1>
+							<p>那么现在开始吧！欢迎来到Emoticon</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+					
+			<div class="banner-info-bottom">
+				<div class="banner-info-bottom-left">
+					<ul>
+						<li><a href="#" class="p"></a></li>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="in"></a></li>
+					</ul>
+				</div>
+				<div class="banner-info-bottom-right">
+					<a href="#ptsection-six" class="scroll"><img src="{% static "img/down.png" %}" alt=" " /></a>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="progress-tracker constant">
+				<ul>
+					<li class="section-ptsection-one">
+						<a class="pt-circle scroll" href="#ptsection-one"></a>
+						<span class="pt-description"><span>Home</span></span>
+					</li>
+					<li class="section-ptsection-two">
+						<a class="pt-circle scroll" href="#ptsection-two"></a>
+						<span class="pt-description"><span>About</span></span>
+					</li>			
+					<li class="section-ptsection-seven">
+						<a class="pt-circle scroll" href="#ptsection-seven"></a>
+						<span class="pt-description"><span>Contact</span></span>
+					</li>
+				</ul>					
+			</div>	
+		</div>
+	</div>
+<!-- //banner -->
+<!-- banner-bottom -->
+	<div class="banner-bottom pt-section" data-name="about" id="ptsection-two">
+		<div class="container">
+			<div class="banner-bottom-grids">
+				<div class="col-md-4 banner-bottom-grid">
+                    <a href="/my_demo_app/template">
+					    <div class="banner-bottom-grid1">
+					    	<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+						    <p>Template</p>
+					    </div>
+					    <img src="{% static "img/banner1.jpg"%}" alt=" " class="img-responsive" />
+                    </a>
+				</div>
+                <div class="col-md-4 banner-bottom-grid">
+					<div class="banner-bottom-grid1 banner-bottom-grid3">
+						<span class="glyphicon glyphicon-yen" aria-hidden="true"></span>
+						<p>Announcements</p>
+					</div>
+					<img src="{% static "img/banner3.jpg"%}" alt=" " class="img-responsive" />
+
+				</div>
+                <a href="/my_demo_app/upload">
+                    <div class="col-md-4 banner-bottom-grid">
+                        <div class="banner-bottom-grid1 banner-bottom-grid4">
+                            <span class="glyphicon glyphicon-saved" aria-hidden="true"></span>
+                            <p>Create</p>
+                        </div>
+                        <img src="{% static "img/banner2.jpg" %}" alt=" " class="img-responsive" />
+                    </div>
+                </a>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+<!-- //banner-bottom -->
+
+	<div class="contact pt-section" data-name="Contact" id="ptsection-seven">
+		<div class="map">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3144.899142009709!2d23.72354!3d37.979482999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bd238977fb45%3A0xbdf5a6106a003293!2sFashion+Workshop+by+Vicky+Kaya!5e0!3m2!1sen!2sin!4v1440569426817" frameborder="0" style="border:0" allowfullscreen></iframe>
+			<div class="map-color">
+			</div>
+		</div>
+		<div class="contact-grids">
+			<div class="col-md-3 contact-grid">
+				<div class="call">
+					<div class="col-xs-3 contact-grdl">
+						<span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
+					</div>
+					<div class="col-xs-9 contact-grdr">
+						<ul>
+							<li>+1234 567 890</li>
+							<li>+9876 543 210</li>
+						</ul>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="address">
+					<div class="col-xs-3 contact-grdl">
+						<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+					</div>
+					<div class="col-xs-9 contact-grdr">
+						<ul>
+							<li>UJN</li>
+						</ul>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="mail">
+					<div class="col-xs-3 contact-grdl">
+						<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+					</div>
+					<div class="col-xs-9 contact-grdr">
+						<ul>
+							<li><a href="mailto:info@example.com">info@ujn.com</a></li>
+						</ul>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="col-md-5 contact-grid">
+				<form>
+					<input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required>
+					<input type="email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required>
+					<textarea type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required>Message...
+                    </textarea>
+					<input type="submit" value="Send" >
+				</form>
+			</div>
+			<div class="col-md-4 contact-grid">
+				<div class="newsletter">
+					<h3><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>Newsletter</h3>
+				</div>
+				<form>
+					<input type="email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required>
+					<input type="submit" value="Subscribe" >
+				</form>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- contact -->
+	<div class="footer">
+		<div class="container">
+			<p>Copyright &copy;klingsly榆沐 2018.</p>
+		</div>
+	</div>
+<!-- //footer -->
+</body>
+</html>
